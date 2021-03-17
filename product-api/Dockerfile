@@ -3,5 +3,7 @@ RUN apk update && apk add openjdk11 --repository=http://dl-cdn.alpinelinux.org/a
 #RUN mkdir vodafone
 WORKDIR vodafone
 COPY ./target/product-api.jar .
+#ADD SOURCE(URL,RAR,TAR,ZIP) DESTINATION(.)
 EXPOSE 80
-CMD ["java","-jar","product-api.jar"]
+ENTRYPOINT ["java","-jar","product-api.jar"]
+#CMD ["java","-jar","product-api.jar"]
